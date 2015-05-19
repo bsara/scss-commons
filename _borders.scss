@@ -1,0 +1,138 @@
+////
+/// @group Borders
+/// @author Brandon Sara (http://bsara.github.io)
+////
+
+
+
+//----------------------------------------------------------------------------------//
+// Mixins                                                                           //
+//----------------------------------------------------------------------------------//
+
+
+/// Generates the property `border-radius` as well as each necessary
+/// vendor prefix.
+///
+/// @param {Number} $radius - The border radius.
+///
+/// @example
+///   // Usage:
+///   @include border-radius(5px);
+///
+///   // Output:
+///   -webkit-border-radius: 5px;
+///   -moz-border-radius: 5px;
+///   border-radius: 5px;
+@mixin border-radius($radius) {
+  @each $browser-prefix in webkit, moz, $string-empty {
+    #{process-browser-prefix($browser-prefix)}border-radius: $radius;
+  }
+}
+
+
+/// @todo Add Documentation
+///
+/// @param {Number} $radius - The border radius.
+///
+/// @example
+///   TODO
+@mixin border-radius-bottom($radius) {
+  @include border-radius-bottom-left($radius);
+  @include border-radius-bottom-right($radius);
+}
+
+
+/// @todo Add Documentation
+///
+/// @param {Number} $radius - The border radius.
+///
+/// @example
+///   TODO
+@mixin border-radius-bottom-left($radius) {
+  -moz-border-radius-bottomleft: $radius;
+
+  @each $browser-prefix in webkit, $string-empty {
+    #{process-browser-prefix($browser-prefix)}border-bottom-left-radius: $radius;
+  }
+}
+
+
+/// @todo Add Documentation
+///
+/// @param {Number} $radius - The border radius.
+///
+/// @example
+///   TODO
+@mixin border-radius-bottom-right($radius) {
+  -moz-border-radius-bottomright: $radius;
+
+  @each $browser-prefix in webkit, $string-empty {
+    #{process-browser-prefix($browser-prefix)}border-bottom-right-radius: $radius;
+  }
+}
+
+
+/// @todo Add Documentation
+///
+/// @param {Number} $radius - The border radius.
+///
+/// @example
+///   TODO
+@mixin border-radius-left($radius) {
+  @include border-radius-top-left($radius);
+  @include border-radius-bottom-left($radius);
+}
+
+
+/// @todo Add Documentation
+///
+/// @param {Number} $radius - The border radius.
+///
+/// @example
+///   TODO
+@mixin border-radius-right($radius) {
+  @include border-radius-top-right($radius);
+  @include border-radius-bottom-right($radius);
+}
+
+
+/// @todo Add Documentation
+///
+/// @param {Number} $radius - The border radius.
+///
+/// @example
+///   TODO
+@mixin border-radius-top($radius) {
+  @include border-radius-top-left($radius);
+  @include border-radius-top-right($radius);
+}
+
+
+/// @todo Add Documentation
+///
+/// @param {Number} $radius - The border radius.
+///
+/// @example
+///   TODO
+@mixin border-radius-top-left($radius) {
+  -moz-border-radius-topleft: $radius;
+
+  @each $browser-prefix in webkit, $string-empty {
+    #{process-browser-prefix($browser-prefix)}border-top-left-radius: $radius;
+  }
+}
+
+
+/// @todo Add Documentation
+///
+/// @param {Number} $radius - The border radius.
+///
+/// @example
+///   TODO
+@mixin border-radius-top-right($radius) {
+  -moz-border-radius-topright: $radius;
+
+  @each $browser-prefix in webkit, $string-empty {
+    #{process-browser-prefix($browser-prefix)}border-top-right-radius: $radius;
+  }
+}

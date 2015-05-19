@@ -1,0 +1,96 @@
+////
+/// @group Icons
+/// @author Brandon Sara (http://bsara.github.io)
+////
+
+
+
+//----------------------------------------------------------------------------------//
+// Mixins                                                                           //
+//----------------------------------------------------------------------------------//
+
+
+/// @todo Add Documentation
+///
+/// @content TODO
+///
+/// @example
+///   TODO
+@mixin pseudo-icon {
+  &:before {
+    @content;
+  }
+}
+
+
+/// @todo Add Documentation
+///
+/// @content TODO
+///
+/// @example
+///   TODO
+@mixin pseudo-icon-active {
+  &:active {
+    @include pseudo-icon {
+      @content;
+    }
+  }
+}
+
+
+/// @todo Add Documentation
+///
+/// @content TODO
+///
+/// @example
+///   TODO
+@mixin pseudo-icon-hover {
+  &:hover {
+    @include pseudo-icon {
+      @content;
+    }
+  }
+}
+
+
+/// @todo Add Documentation
+///
+/// @content TODO
+///
+/// @example
+///   TODO
+@mixin pseudo-icon-after {
+  &:after {
+    @content;
+  }
+}
+
+
+/// @todo Add Documentation
+///
+/// @content TODO
+///
+/// @example
+///   TODO
+@mixin pseudo-icon-after-active {
+  &:active {
+    @include pseudo-icon-after {
+      @content;
+    }
+  }
+}
+
+
+/// @todo Add Documentation
+///
+/// @content TODO
+///
+/// @example
+///   TODO
+@mixin pseudo-icon-after-hover {
+  &:hover {
+    @include pseudo-icon-after {
+      @content;
+    }
+  }
+}

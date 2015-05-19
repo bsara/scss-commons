@@ -1,0 +1,382 @@
+////
+/// @author Brandon Sara (http://bsara.github.io)
+////
+
+
+
+//----------------------------------------------------------------------------------//
+// Functions                                                                        //
+//----------------------------------------------------------------------------------//
+
+/// Adds a slash (`\`) to the beginning of the given value.
+///
+/// @param $value - Value on which to prepend a slash.
+/// @returns {String} `$value` prepended with a `\` character.
+///
+/// @example
+///   // Usage:
+///   content: prepend-slash(2716);
+///
+///   // Output:
+///   content: "\2716";
+@function prepend-slash($value) {
+  @return unquote("\"\\#{$value}\"");
+}
+
+
+/// Processes browser prefixes to be used when generating vendor
+/// prefix versions of properties for functions.
+///
+/// @param {String} $browser-prefix - The browser prefix to process.
+/// @returns {String} The `$browser-prefix` wrapped in dashes (`-`). If `$browser-prefix`
+///                   is an empty string, then an empty string is returned.
+///
+/// @example
+///   // Usage:
+///   #{process-browser-prefix('webkit')}user-select: none;
+///   #{process-browser-prefix('')}user-select: none;
+///
+///   // Output:
+///   -webkit-user-select: none;
+///   user-select: none;
+@function process-browser-prefix($browser-prefix) {
+  @if $browser-prefix != $string-empty {
+    @return '-#{$browser-prefix}-';
+  }
+  @return $string-empty;
+}
+
+
+/// Adds a percent sign (`%`) to the given number.
+///
+/// @param {Number} $num - Value to add `%` sign to.
+/// @returns {Number} `$num` witha `%` appended to it.
+///
+/// @example
+///   // Usage:
+///   width: add-percent-sign(42);
+///
+///   // Output:
+///   width: 42%;
+@function add-percent-sign($num) {
+  @return $num * 1%;
+}
+
+
+/// Gets the percentage that the given `$num-of-pieces` is out of 100.
+///
+/// @param {Number} $num-of-pieces - Represents the number of times you are dividing
+///                                  something (I.E. number of pieces of a whole).
+/// @returns {Number} A percentage value of `100 / $num-of-pieces`.
+///
+/// @example
+///   // Usage:
+///   width: percentage-of-pieces(5);
+///   height: percentage-of-pieces(3);
+///
+///   // Output:
+///   width: 20%;
+///   height: 33.33333%;
+@function percentage-of-pieces($num-of-pieces) {
+  @return add-percent-sign(100 / $num-of-pieces);
+}
+
+
+
+//----------------------------------------------------------------------------------//
+// Mixins                                                                           //
+//----------------------------------------------------------------------------------//
+
+
+/// Generates the property `appearance` as well as each necessary
+/// vendor prefix.
+///
+/// @param $val - The value of the appearance property.
+///
+/// @example
+///   // Usage:
+///   @include appearance(button);
+///
+///   // Output:
+///   -webkit-appearance: button;
+///   -moz-appearance: button;
+///   appearance: button;
+@mixin appearance($val) {
+  @each $browser-prefix in webkit, moz, $string-empty {
+    #{process-browser-prefix($browser-prefix)}appearance: $val;
+  }
+}
+
+
+
+/// Generates the property `box-shadow` as well as each necessary
+/// vendor prefix.
+///
+/// @param $args... - The values of the box-shadow property.
+///
+/// @example
+///   // Usage:
+///   @include box-shadow(10px 10px 5px 0px rgba(0,0,0,0.75));
+///
+///   // Output:
+///   -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+///   -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+///   box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+@mixin box-shadow($args...) {
+  @each $browser-prefix in webkit, moz, $string-empty {
+    #{process-browser-prefix($browser-prefix)}box-shadow: $args;
+  }
+}
+
+
+/// Generates the property `box-sizing` as well as each necessary
+/// vendor prefix.
+///
+/// @param $val - The value of the box-sizing property.
+///
+/// @example
+///   // Usage:
+///   @include box-sizing(border-box);
+///
+///   // Output:
+///   -webkit-box-sizing: border-box;
+///   -moz-box-sizing: borderbox;
+///   box-sizing: border-box;
+@mixin box-sizing($val) {
+  @each $browser-prefix in webkit, moz, $string-empty {
+    #{process-browser-prefix($browser-prefix)}box-sizing: $val;
+  }
+}
+
+
+/// Generates the property `filter` as well as each necessary
+/// vendor prefix.
+///
+/// @param $val - The value of the filter property.
+///
+/// @example
+///   // Usage:
+///   @include filter(blur(8px));
+///
+///   // Output:
+///   -webkit-filter: blur(8px);
+///   filter: blur(8px);
+@mixin filter($val) {
+  -webkit-filter: $val;
+  filter: $val;
+}
+
+
+/// Generates the property `font-smoothing` as well as each necessary
+/// vendor prefix.
+///
+/// @param $val - The value of the font-smoothing property.
+///
+/// @example
+///   // Usage:
+///   @include font-smoothing(antialiased);
+///
+///   // Output:
+///   -webkit-font-smoothing: antialiased;
+///   -moz-font-smoothing: antialiased;
+///   font-smoothing: antialiased;
+@mixin font-smoothing($val) {
+  @each $browser-prefix in webkit, moz, $string-empty {
+    #{process-browser-prefix($browser-prefix)}font-smoothing: $val;
+  }
+}
+
+
+/// Generates the given property with a `linear-gradient` value
+/// as well as each necessary vendor prefix for that value.
+///
+/// @param $property - The property to generate.
+/// @param $values... - The value(s) to pass to the `linear-gradient` function.
+///
+/// @example
+///   // Usage:
+///   @include linear-gradient(background, left, #ff0 0%, #f00 50%, #000 51%, #222 71%, #fff 100%)
+///
+///   // Output:
+///   background: -webkit-linear-gradient(left, #ff0 0%, #f00 50%, #000 51%, #222 71%, #fff 100%);
+///   background: -moz-linear-gradient(left, #ff0 0%, #f00 50%, #000 51%, #222 71%, #fff 100%);
+///   background: -ms-linear-gradient(left, #ff0 0%, #f00 50%, #000 51%, #222 71%, #fff 100%);
+///   background: -o-linear-gradient(left, #ff0 0%, #f00 50%, #000 51%, #222 71%, #fff 100%);
+///   background: linear-gradient(left, #ff0 0%, #f00 50%, #000 51%, #222 71%, #fff 100%);
+@mixin linear-gradient($property, $values...) {
+  @each $browser-prefix in webkit, moz, ms, o, $string-empty {
+    #{$property}: #{process-browser-prefix($browser-prefix)}linear-gradient($values);
+  }
+}
+
+
+/// Generates the property `opacity` as well as each necessary
+/// vendor prefix.
+///
+/// @param $val - The value of the opacity property.
+///
+/// @example
+///   // Usage:
+///   @include opacity(0.5);
+///
+///   // Output:
+///   -khtml-opacity: 0.5;
+///   -moz-opacity: 0.5;
+///   opacity: 0.5;
+@mixin opacity($val) {
+  @each $browser-prefix in khtml, moz, $string-empty {
+    #{process-browser-prefix($browser-prefix)}opacity: $val;
+  }
+}
+
+
+
+/// Sets `left` and `right` to the same value.
+///
+/// @param {%|em|in|pt|px} $val - Position value.
+///
+/// @example
+///   // Usage:
+///   @include position-sides(5px);
+///
+///   // Output:
+///   left: 5px;
+///   right: 5px;
+@mixin position-sides($val) {
+  left: $val;
+  right: $val;
+}
+
+
+/// Sets `top` and `bottom` to the same value.
+///
+/// @param {%|em|in|pt|px} $val - Position value.
+///
+/// @example
+///   // Usage:
+///   @include position-sides(5px);
+///
+///   // Output:
+///   top: 5px;
+///   bottom: 5px;
+@mixin position-top-bottom($val) {
+  top: $val;
+  bottom: $val;
+}
+
+
+/// Generates the given property with a `repeating-linear-gradient` value
+/// as well as each necessary vendor prefix for that value.
+///
+/// @param $property - The property to generate.
+/// @param $values... - The value(s) to pass to the `repeating-linear-gradient` function.
+///
+/// @example
+///   // Usage:
+///   @include repeating-linear-gradient(color, left, #ff0 0%, #f00 50%, #000 51%, #222 71%, #fff 100%)
+///
+///   // Output:
+///   color: -webkit-repeating-linear-gradient(left, #ff0 0%, #f00 50%, #000 51%, #222 71%, #fff 100%);
+///   color: -moz-linear-gradient(left, #ff0 0%, #f00 50%, #000 51%, #222 71%, #fff 100%);
+///   color: -ms-linear-gradient(left, #ff0 0%, #f00 50%, #000 51%, #222 71%, #fff 100%);
+///   color: -o-linear-gradient(left, #ff0 0%, #f00 50%, #000 51%, #222 71%, #fff 100%);
+///   color: linear-gradient(left, #ff0 0%, #f00 50%, #000 51%, #222 71%, #fff 100%);
+@mixin repeating-linear-gradient($property, $values...) {
+  @each $browser-prefix in webkit, moz, ms, o, $string-empty {
+    #{$property}: #{process-browser-prefix($browser-prefix)}repeating-linear-gradient($values);
+  }
+}
+
+
+/// Sets `width` and `height` to the same value.
+///
+/// @param {%|em|in|pt|px} $val - Size value.
+///
+/// @example
+///   // Usage:
+///   @include size(700px);
+///
+///   // Output:
+///   width: 700px;
+///   height: 700px;
+@mixin size($val) {
+  width: $val;
+  height: $val;
+}
+
+
+/// Generates the property `text-size-adjust` as well as each necessary
+/// vendor prefix.
+///
+/// @param $val - The value of the text-size-adjust property.
+///
+/// @example
+///   // Usage:
+///   @include text-size-adjust(auto);
+///
+///   // Output:
+///   -webkit-text-size-adjust: auto;
+///   -moz-text-size-adjust: auto;
+///   -ms-text-size-adjust: auto;
+///   text-size-adjust: auto;
+@mixin text-size-adjust($val) {
+  @each $browser-prefix in webkit, moz, ms, $string-empty {
+    #{process-browser-prefix($browser-prefix)}text-size-adjust: $val;
+  }
+}
+
+
+/// Generates the property `transform` as well as each necessary
+/// vendor prefix.
+///
+/// @param $val - The value of the transform property.
+///
+/// @example
+///   // Usage:
+///   @include transform(rotate(7deg));
+///
+///   // Output:
+///   -webkit-transform: rotate(7deg);
+///   -ms-transform: rotate(7deg);
+///   transform: rotate(7deg);
+@mixin transform($val) {
+  @each $browser-prefix in webkit, ms, $string-empty {
+    #{process-browser-prefix($browser-prefix)}transform: $val;
+  }
+}
+
+
+/// Generates the property `user-select` as well as each necessary
+/// vendor prefix.
+///
+/// @param $val - The value of the user-select property.
+///
+/// @example
+///   // Usage:
+///   @include user-select(none);
+///
+///   // Output:
+///   -webkit-user-select: none;
+///   -moz-user-select: none;
+///   -ms-user-select: none;
+///   -o-user-select: none;
+///   user-select: none;
+@mixin user-select($val) {
+  @each $browser-prefix in webkit, moz, ms, o, $string-empty {
+    #{process-browser-prefix($browser-prefix)}user-select: $val;
+  }
+}
+
+
+
+//----------------------------------------------------------------------------------//
+// Placeholders                                                                     //
+//----------------------------------------------------------------------------------//
+
+
+/// Causes any inheriting children to be completely absent from print media.
+%remove-from-print {
+  @media print {
+    display: none !important;
+  }
+}

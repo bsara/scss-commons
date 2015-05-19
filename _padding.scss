@@ -1,0 +1,160 @@
+////
+/// @group Padding
+/// @author Brandon Sara (http://bsara.github.io)
+////
+
+
+
+//----------------------------------------------------------------------------------//
+// Mixins                                                                           //
+//----------------------------------------------------------------------------------//
+
+
+/// Sets `padding-bottom` and `padding-left` to the same value.
+///
+/// @param {%|em|in|pt|px} $val - Padding amount.
+///
+/// @example
+///   // Usage:
+///   @include padding-bottom-left(5px);
+///
+///   // Output:
+///   padding-left: 5px;
+///   padding-bottom: 5px;
+@mixin padding-bottom-left($val) {
+  padding: {
+    left: $val;
+    bottom: $val;
+  }
+}
+
+
+/// Sets `padding-bottom` and `padding-right` to the same value.
+///
+/// @param {%|em|in|pt|px} $val - Padding amount.
+///
+/// @example
+///   // Usage:
+///   @include padding-bottom-right(5px);
+///
+///   // Output:
+///   padding-right: 5px;
+///   padding-bottom: 5px;
+@mixin padding-bottom-right($val) {
+  padding: {
+    right: $val;
+    bottom: $val;
+  }
+}
+
+
+/// Sets `padding-bottom`, `padding-left`, and `padding-right` to the same value.
+///
+/// @param {%|em|in|pt|px} $val - Padding amount.
+///
+/// @example
+///   // Usage:
+///   @include padding-bottom-sides(5px);
+///
+///   // Output:
+///   padding-left: 5px;
+///   padding-right: 5px;
+///   padding-bottom: 5px;
+@mixin padding-bottom-sides($val) {
+  @include padding-sides($val);
+  padding-bottom: $val;
+}
+
+
+/// Sets `padding-left` and `padding-right` to the same value.
+///
+/// @param {%|em|in|pt|px} $val - Padding amount.
+///
+/// @example
+///   // Usage:
+///   @include padding-sides(5px);
+///
+///   // Output:
+///   padding-left: 5px;
+///   padding-right: 5px;
+@mixin padding-sides($val) {
+  padding: {
+    left: $val;
+    right: $val;
+  }
+}
+
+
+/// Sets `padding-top` and `padding-bottom` to the same value.
+///
+/// @param {%|em|in|pt|px} $val - Padding amount.
+///
+/// @example
+///   // Usage:
+///   @include padding-top-bottom(5px);
+///
+///   // Output:
+///   padding-top: 5px;
+///   padding-bottom: 5px;
+@mixin padding-top-bottom($val) {
+  padding: {
+    top: $val;
+    bottom: $val;
+  }
+}
+
+
+/// Sets `padding-top` and `padding-left` to the same value.
+///
+/// @param {%|em|in|pt|px} $val - Padding amount.
+///
+/// @example
+///   // Usage:
+///   @include padding-top-left(5px);
+///
+///   // Output:
+///   padding-top: 5px;
+///   padding-left: 5px;
+@mixin padding-top-left($val) {
+  padding: {
+    top: $val;
+    left: $val;
+  }
+}
+
+
+/// Sets `padding-top` and `padding-right` to the same value.
+///
+/// @param {%|em|in|pt|px} $val - Padding amount.
+///
+/// @example
+///   // Usage:
+///   @include padding-top-right(5px);
+///
+///   // Output:
+///   padding-top: 5px;
+///   padding-right: 5px;
+@mixin padding-top-right($val) {
+  padding: {
+    top: $val;
+    right: $val;
+  }
+}
+
+
+/// Sets `padding-top`, `padding-left`, and `padding-right` to the same value.
+///
+/// @param {%|em|in|pt|px} $val - Padding amount.
+///
+/// @example
+///   // Usage:
+///   @include padding-top-sides(5px);
+///
+///   // Output:
+///   padding-top: 5px;
+///   padding-left: 5px;
+///   padding-right: 5px;
+@mixin padding-top-sides($val) {
+  @include padding-sides($val);
+  padding-top: $val;
+}

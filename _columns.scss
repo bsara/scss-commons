@@ -1,0 +1,239 @@
+////
+/// @group Columns
+/// @author Brandon Sara (http://bsara.github.io)
+////
+
+
+
+//----------------------------------------------------------------------------------//
+// Mixins                                                                           //
+//----------------------------------------------------------------------------------//
+
+
+/// Generates the property `column-count` as well as each necessary
+/// vendor prefix.
+///
+/// @param $val - The value of the column-count property.
+///
+/// @example
+///   // Usage:
+///   @include column-count(3);
+///
+///   // Output:
+///   -webkit-column-count: 3;
+///   -moz-column-count: 3;
+///   column-count: 3;
+@mixin column-count($val) {
+  -webkit-column-count: $val;
+  -moz-column-count: $val;
+  column-count: $val;
+}
+
+
+/// Generates the property `column-fill` as well as each necessary
+/// vendor prefix.
+///
+/// @param $val - The value of the column-fill property.
+///
+/// @example
+///   // Usage:
+///   @include column-fill(auto);
+///
+///   // Output:
+///   -moz-column-fill: auto;
+///   column-count: auto;
+@mixin column-fill($val) {
+  -moz-column-fill: $val;
+  column-fill: $val;
+}
+
+
+/// Generates the property `column-gap` as well as each necessary
+/// vendor prefix.
+///
+/// @param $val - The value of the column-gap property.
+///
+/// @example
+///   // Usage:
+///   @include column-gap(42px);
+///
+///   // Output:
+///   -webkit-column-gap: 42px;
+///   -moz-column-gap: 42px;
+///   column-gap: 42px;
+@mixin column-gap($val) {
+  -webkit-column-gap: $val;
+  -moz-column-gap: $val;
+  column-gap: $val;
+}
+
+
+/// Generates the property `column-rule` as well as each necessary
+/// vendor prefix.
+///
+/// @param $val - The value of the column-rule property.
+///
+/// @example
+///   // Usage:
+///   @include column-rule(4px outset #ff00ff);
+///
+///   // Output:
+///   -webkit-column-rule: 4px outset #ff00ff;
+///   -moz-column-rule: 4px outset #ff00ff;
+///   column-rule: 4px outset #ff00ff;
+@mixin column-rule($val) {
+  -webkit-column-rule: $val;
+  -moz-column-rule: $val;
+  column-rule: $val;
+}
+
+
+/// Generates the property `column-rule-color` as well as each necessary
+/// vendor prefix.
+///
+/// @param $val - The value of the column-rule-color property.
+///
+/// @example
+///   // Usage:
+///   @include column-rule-color(#ff00ff);
+///
+///   // Output:
+///   -webkit-column-rule-color: #ff00ff;
+///   -moz-column-rule-color: #ff00ff;
+///   column-rule-color: #ff00ff;
+@mixin column-rule-color($val) {
+  -webkit-column-rule-color: $val;
+  -moz-column-rule-color: $val;
+  column-rule-color: $val;
+}
+
+
+/// Generates the property `column-rule-style` as well as each necessary
+/// vendor prefix.
+///
+/// @param $val - The value of the column-rule-style property.
+///
+/// @example
+///   // Usage:
+///   @include column-rule-style(dotted);
+///
+///   // Output:
+///   -webkit-column-rule-style: dotted;
+///   -moz-column-rule-style: dotted;
+///   column-rule-style: dotted;
+@mixin column-rule-style($val) {
+  -webkit-column-rule-style: $val;
+  -moz-column-rule-style: $val;
+  column-rule-style: $val;
+}
+
+
+/// Generates the property `column-rule-width` as well as each necessary
+/// vendor prefix.
+///
+/// @param $val - The value of the column-rule-width property.
+///
+/// @example
+///   // Usage:
+///   @include column-rule-width(1px);
+///
+///   // Output:
+///   -webkit-column-rule-width: 1px;
+///   -moz-column-rule-width: 1px;
+///   column-rule-width: 1px;
+@mixin column-rule-width($val) {
+  -webkit-column-rule-width: $val;
+  -moz-column-rule-width: $val;
+  column-rule-width: $val;
+}
+
+
+/// Generates the property `column-span` as well as each necessary
+/// vendor prefix.
+///
+/// @param $val - The value of the column-span property.
+///
+/// @example
+///   // Usage:
+///   @include column-span(all);
+///
+///   // Output:
+///   -webkit-column-span: all;
+///   column-span: all;
+@mixin column-span($val) {
+  -webkit-column-span: $val;
+  column-span: $val;
+}
+
+
+/// Generates the property `column-width` as well as each necessary
+/// vendor prefix.
+///
+/// @param $val - The value of the column-width property.
+///
+/// @example
+///   // Usage:
+///   @include column-width(100px);
+///
+///   // Output:
+///   -webkit-column-width: 100px;
+///   -moz-column-width: 100px;
+///   column-width: 100px;
+@mixin column-width($val) {
+  -webkit-column-width: $val;
+  -moz-column-width: $val;
+  column-width: $val;
+}
+
+
+/// Generates the property `columns` as well as each necessary
+/// vendor prefix.
+///
+/// @param $val - The value of the columns property.
+///
+/// @example
+///   // Usage:
+///   @include columns(100px 3);
+///
+///   // Output:
+///   -webkit-columns: 100px 3;
+///   -moz-columns: 100px 3;
+///   columns: 100px 3;
+@mixin columns($val) {
+  -webkit-columns: $val;
+  -moz-columns: $val;
+  columns: $val;
+}
+
+
+/// @todo Add Documentation
+///
+/// @param {Number} $num-of-columns - TODO
+///
+/// @example
+///   // Usage:
+///   .my-selector {
+///     @include multi-column-width(5);
+///   }
+///
+///   // Output:
+///   .my-selector:only-child {
+///     width: 100%;
+///   }
+///
+///   .my-selector:first-child:nth-last-child(5),
+///   .my-selector:first-child:nth-last-child(5) ~ .my-selector:first-child {
+///     width: 20%;
+///   }
+@mixin multi-column-width($num-of-columns) {
+  &:only-child {
+    width: 100%;
+  }
+
+  &:first-child {
+    &:nth-last-child(#{$num-of-columns}),
+    &:nth-last-child(#{$num-of-columns}) ~ & {
+      width: percentage-of-pieces($num-of-columns);
+    }
+  }
+}

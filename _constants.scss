@@ -1,0 +1,28 @@
+////
+/// @author Brandon Sara (http://bsara.github.io)
+////
+
+
+
+//----------------------------------------------------------------------------------//
+// Constants                                                                        //
+//----------------------------------------------------------------------------------//
+
+
+/// The number of pts per pixel.
+/// @type pt
+$pt-per-px: 0.75pt;
+
+/// The number of pixels per pt.
+/// @type px
+$px-per-pt: 1px + (1px/3);
+
+
+
+/// An empty string. (Using this can help increase code readability).
+/// @type String
+$string-empty: '';
+
+/// A space character. (Using this can help increase code readability).
+/// @type String
+$string-space: ' ';

@@ -1,0 +1,244 @@
+////
+/// @group Unit Manipulation
+/// @author Brandon Sara (http://bsara.github.io)
+////
+
+
+
+//----------------------------------------------------------------------------------//
+// Functions                                                                        //
+//----------------------------------------------------------------------------------//
+
+
+/// @todo Add Documentation
+///
+/// @param {Unit} $return-unit - TODO
+/// @param {em|pt|px} $vals - TODO
+/// @returns {em|pt|px} TODO
+///
+/// @example
+///   TODO
+@function add-mixed-units($return-unit, $vals...) {
+  @if $return-unit != 'em' and $return-unit != 'pt' and $return-unit != 'px' {
+    @error "$return-unit must be either 'em', 'pt', or 'px'; but was '#{$return-unit}'";
+  }
+
+
+  $vals-length: length($vals);
+
+  @if $vals-length == 0 {
+    @error "$vals cannot be empty.";
+  } @else if $return-unit == 'em' and $vals-length == 1 {
+    @error "$vals must have more than one element if the $return-unit is 'em'."
+  }
+
+
+  $ret: 0;
+  $em-base: false;
+
+  @if $return-unit == 'em' {
+    $em-base: nth($vals, 1);
+  }
+
+
+  $is-first: true;
+
+  @each $val in $vals {
+    @if $em-base and $is-first  {
+      $val: 0;
+    }
+
+    $is-first: false;
+    $val-unit: unit($val);
+
+    @if not(unitless($val)) and $val-unit != $return-unit {
+      @if $val-unit == 'em' {
+        @error "$vals cannot contain a value with 'em' unit unless 'em' is the return unit."
+      }
+
+      @if $return-unit == 'em' {
+        $val: to-em($val);
+      } @else if $return-unit == 'pt' {
+        $val: px-to-pt($val);
+      } @else if $return-unit == 'px' {
+        $val: pt-to-px($val);
+      }
+    }
+
+    $ret: $ret + remove-unit($val);
+  }
+
+
+  @return $ret * 1#{$return-unit};
+}
+
+
+/// @todo Add Documentation
+///
+/// @param {em} $em - TODO
+/// @param {pt} $base [12pt] - TODO
+/// @returns {pt} TODO
+///
+/// @example
+///   TODO
+@function em-to-pt($em, $base: 12pt) {
+  @if not(unitless($em)) and unit($em) != 'em' {
+    @error "$em must either be unitless or be of the unit 'em', but was '#{unit($em)}'.";
+  }
+
+  @if unitless($base) {
+    $base: $base * 1pt;
+  } @else if unit($base) == 'px' {
+    $base: px-to-pt($base);
+  } @else if unit($base) == 'em' {
+    @error "$base must either be unitless or be of the unit 'pt' or 'px', but was '#{unit($base)}'."
+  }
+
+  @if not(unitless($em)) {
+    $em: remove-unit($em);
+  }
+
+  @return $em * $base;
+}
+
+
+/// @todo Add Documentation
+///
+/// @param {em} $em - TODO
+/// @param {px} $base [16px] - TODO
+/// @returns {px} TODO
+///
+/// @example
+///   TODO
+@function em-to-px($em, $base: 16px) {
+  @if not(unitless($em)) and unit($em) != 'em' {
+    @error "$em must either be unitless or be of the unit 'em', but was '#{unit($em)}'.";
+  }
+
+  @if unitless($base) {
+    $base: $base * 1px;
+  } @else if unit($base) == 'pt' {
+    $base: pt-to-px($base);
+  } @else if unit($base) == 'em' {
+    @error "$base must either be unitless or be of the unit 'pt' or 'px', but was '#{unit($base)}''."
+  }
+
+  @if not(unitless($em)) {
+    $em: remove-unit($em);
+  }
+
+  @return $em * $base;
+}
+
+
+/// @todo Add Documentation
+///
+/// @param {pt} $pt - TODO
+/// @returns {px} TODO
+///
+/// @example
+///   TODO
+@function pt-to-px($pt) {
+  @if not(unitless($pt)) and unit($pt) != 'pt' {
+    @error "$pt must either be unitless or be of the unit 'pt', but was '#{unit($pt)}'.";
+  }
+
+  @if not(unitless($pt)) {
+    $pt: remove-unit($pt);
+  }
+
+  @return $pt * $px-per-pt;
+}
+
+
+/// @todo Add Documentation
+///
+/// @param {px} $px - TODO
+/// @returns {pt} TODO
+///
+/// @example
+///   TODO
+@function px-to-pt($px) {
+  @if not(unitless($px)) and unit($px) != 'px' {
+    @error "$px must either be unitless or be of the unit 'px', but was '#{unit($px)}'.";
+  }
+
+  @if not(unitless($px)) {
+    $px: remove-unit($px);
+  }
+
+  @return $px * $pt-per-px;
+}
+
+
+/// @todo Add Documentation
+///
+/// @param {pt|px} $val - TODO
+/// @param {pt|px} $base [16px] - TODO
+/// @returns {em} TODO
+///
+/// @example
+///   TODO
+@function to-em($val, $base: 16px) {
+  $val-unit: unit($val);
+  $base-unit: unit($base);
+
+  @if $val-unit == 'em' {
+    @error "$val cannot be in 'em' units, but was '#{unit($val)}'";
+  }
+  @if $base-unit == 'em' {
+    @error "$base cannot be in 'em' units, but was '#{unit($base)}'";
+  }
+
+  @if $val-unit != $base-unit {
+    @if $val-unit == 'pt' {
+      $val: pt-to-px($val);
+    }
+    @if $base-unit == 'pt' {
+      $base: pt-to-px($base);
+    }
+  }
+
+  @return ($val / $base) * 1em;
+}
+
+
+/// Removes any units used appended to the given number.
+///
+/// @param {%|em|in|pt|px} $num - Number from which units will be removed.
+/// @returns {Number} The same number given, but without the units.
+///
+/// @throws Throws an error if unit is given that is not supported.
+///         (See parameters for supported unit types).
+///
+/// @example
+///   // Usage:
+///   z-index: remove-unit(10px);
+///
+///   // Output:
+///   z-index: 10;
+@function remove-unit($num) {
+  @if unitless($num) {
+    @return $num;
+  }
+
+  $unit: unit($num);
+
+  @if $unit == 'pt' {
+    @return $num / 1pt;
+  }
+  @if $unit == 'px' {
+    @return $num / 1px;
+  }
+  @if $unit == 'em' {
+    @return $num / 1em;
+  }
+  @if $unit == '%' {
+    @return $num / 1%;
+  }
+  @if $unit == 'in' {
+    @return $num / 1in;
+  }
+
+  @error "The following unit is not supported: '#{$unit}'. Value Given: #{$num}";
+}

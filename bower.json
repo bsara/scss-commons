@@ -1,0 +1,34 @@
+{
+  "name": "scss-commons",
+  "version": "0.1.0",
+  "authors": [
+    "Brandon Sara (http://bsara.github.io)"
+  ],
+  "description": "A collection of commonly useful SCSS functions, mixins, variables, and classes",
+  "keywords": [
+    "css",
+    "sass",
+    "scss",
+    "style",
+    "styles"
+  ],
+  "license": [
+    "Copyright (c) 2015 Brandon Sara",
+    "CPOL-1.02"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/bsara/scss-commons.git"
+  },
+  "homepage": "http://bsara.github.io/scss-commons/",
+  "main": "_scss-commons.scss",
+  "ignore": [
+    "**/*",
+    "!/_*.scss",
+    "!/LICENSE",
+    "!/LICENSE.md",
+    "!/README.md",
+    "!/docs/*",
+    "!/docs/**/*"
+  ]
+}

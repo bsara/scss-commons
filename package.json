@@ -1,0 +1,38 @@
+{
+  "name": "scss-commons",
+  "version": "0.1.0",
+  "authors": [
+    "Brandon Sara (http://bsara.github.io)"
+  ],
+  "description": "A collection of commonly useful SCSS functions, mixins, variables, and classes",
+  "keywords": [
+    "css",
+    "sass",
+    "scss",
+    "style",
+    "styles"
+  ],
+  "license": [
+    "Copyright (c) 2015 Brandon Sara",
+    "CPOL-1.02"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/bsara/scss-commons.git"
+  },
+  "files": [
+    "/_*.scss",
+    "/LICENSE",
+    "/LICENSE.md",
+    "/README.md",
+    "/docs/*",
+    "/docs/**/*"
+  ],
+  "devDependencies": {
+    "gulp": "^3.8.11",
+    "gulp-clean": "^0.3.1",
+    "gulp-ruby-sass": "^1.0.5",
+    "gulp-scss-lint": "^0.1.12",
+    "sassdoc": "^2.1.11"
+  }
+}

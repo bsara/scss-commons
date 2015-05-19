@@ -1,0 +1,220 @@
+@import 'scss-commons';
+
+
+/*****************************************/
+/* Function: prepend-slash               */
+/*****************************************/
+
+#prependSlashTest0 {
+  /* Expected: "\4242" */
+  content: prepend-slash(4242);
+}
+
+
+/*****************************************/
+/* Function: add-mixed-units             */
+/*****************************************/
+
+#addMixedUnitsTest0 {
+  /* Expected: 24pt */
+  width: add-mixed-units('pt', 16px, 12pt);
+}
+#addMixedUnitsTest1 {
+  /* Expected: 25pt */
+  width: add-mixed-units('pt', 16px, 12pt, 1);
+}
+#addMixedUnitsTest2 {
+  /* Expected: 32px */
+  width: add-mixed-units('px', 16px, 12pt);
+}
+#addMixedUnitsTest3 {
+  /* Expected: 33px */
+  width: add-mixed-units('px', 16px, 12pt, 1);
+}
+#addMixedUnitsTest4 {
+  /* Expected: 2em */
+  width: add-mixed-units('em', 12pt, 16px, 12pt);
+}
+#addMixedUnitsTest5 {
+  /* Expected: 3em */
+  width: add-mixed-units('em', 12pt, 16px, 12pt, 1);
+}
+#addMixedUnitsTest6 {
+  /* Expected: 3em */
+  width: add-mixed-units('em', 12pt, 16px, 12pt, 1em);
+}
+
+
+/*****************************************/
+/* Function: em-to-pt                    */
+/*****************************************/
+
+#emToPTTest0 {
+  /* Expected: 12pt */
+  font-size: em-to-pt(1em);
+}
+#emToPTTest1 {
+  /* Expected: 12pt */
+  font-size: em-to-pt(1em, 12pt);
+}
+#emToPTTest2 {
+  /* Expected: 12pt */
+  font-size: em-to-pt(1);
+}
+#emToPTTest3 {
+  /* Expected: 12pt */
+  font-size: em-to-pt(1, 12pt);
+}
+#emToPTTest4 {
+  /* Expected: 12pt */
+  font-size: em-to-pt(1, 12);
+}
+#emToPTTest5 {
+  /* Expected: 13pt */
+  font-size: em-to-pt(1em, 13pt);
+}
+#emToPTTest6 {
+  /* Expected: 28pt */
+  font-size: em-to-pt(2em, 14pt);
+}
+#emToPTTest7 {
+  /* Expected: 12pt */
+  font-size: em-to-pt(1, 16px);
+}
+#emToPTTest8 {
+  /* Expected: 13pt */
+  font-size: em-to-pt(1em, 17.333333px);
+}
+#emToPTTest9 {
+  /* Expected: 28pt */
+  font-size: em-to-pt(2em, 18.666667px);
+}
+
+
+/*****************************************/
+/* Function: pt-to-px                    */
+/*****************************************/
+
+#ptToPXTest0 {
+  /* Expected: 16px */
+  font-size: pt-to-px(12pt);
+}
+#ptToPXTest1 {
+  /* Expected: 16px */
+  font-size: pt-to-px(12);
+}
+
+
+/*****************************************/
+/* Function: px-to-pt                    */
+/*****************************************/
+
+#pxToPTTest0 {
+  /* Expected: 12pt */
+  font-size: px-to-pt(16px);
+}
+#pxToPTTest1 {
+  /* Expected: 12pt */
+  font-size: px-to-pt(16);
+}
+
+
+/*****************************************/
+/* Function: to-em                       */
+/*****************************************/
+
+#toEMTest0 {
+  /* Expected: 1em */
+  font-size: to-em(16px, 16px);
+}
+#toEMTest1 {
+  /* Expected: 1em */
+  font-size: to-em(16px, 12pt);
+}
+#toEMTest2 {
+  /* Expected: 1.25em */
+  font-size: to-em(20px, 16px);
+}
+#toEMTest3 {
+  /* Expected: 1.25em */
+  font-size: to-em(15pt, 12pt);
+}
+#toEMTest4 {
+  /* Expected: 1.5em */
+  font-size: to-em(24px);
+}
+#toEMTest5 {
+  /* Expected: 1.5em */
+  font-size: to-em(18pt);
+}
+
+
+
+/*****************************************/
+/* Mixins                                */
+/*****************************************/
+
+#appearanceTest {
+  @include appearance(button);
+}
+
+
+#borderRadiusTest {
+  @include border-radius(5px);
+}
+
+
+#linearGradientTest0 {
+  /*
+   * Expected:
+   *   background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.5), rgb(255, 255, 255));
+   *   background: -moz-linear-gradient(left, rgba(0, 0, 0, 0.5), rgb(255, 255, 255));
+   *   background: -ms-linear-gradient(left, rgba(0, 0, 0, 0.5), rgb(255, 255, 255));
+   *   background: -o-linear-gradient(left, rgba(0, 0, 0, 0.5), rgb(255, 255, 255));
+   *   background: linear-gradient(left, rgba(0, 0, 0, 0.5), rgb(255, 255, 255));
+   */
+  @include linear-gradient(background, left, rgba(0, 0, 0, 0.5), rgb(255, 255, 255));
+}
+
+
+#pseudoIconTest {
+  @include pseudo-icon {
+    color: #424242;
+  }
+
+  @include pseudo-icon-active {
+    color: #111;
+  }
+
+  @include pseudo-icon-hover {
+    color: #222;
+  }
+}
+
+
+#pseudoIconAfterTest {
+  @include pseudo-icon-after {
+    color: #424242;
+  }
+
+  @include pseudo-icon-after-active {
+    color: #111;
+  }
+
+  @include pseudo-icon-after-hover {
+    color: #222;
+  }
+}
+
+
+#repeatingLinearGradientTest0 {
+  /*
+   * Expected:
+   *   background: -webkit-repeating-linear-gradient(left, rgba(0, 0, 0, 0.5), rgb(255, 255, 255));
+   *   background: -moz-repeating-linear-gradient(left, rgba(0, 0, 0, 0.5), rgb(255, 255, 255));
+   *   background: -ms-repeating-linear-gradient(left, rgba(0, 0, 0, 0.5), rgb(255, 255, 255));
+   *   background: -o-repeating-linear-gradient(left, rgba(0, 0, 0, 0.5), rgb(255, 255, 255));
+   *   background: repeating-linear-gradient(left, rgba(0, 0, 0, 0.5), rgb(255, 255, 255));
+   */
+  @include repeating-linear-gradient(background, left, rgba(0, 0, 0, 0.5), rgb(255, 255, 255));
+}
