@@ -18,9 +18,7 @@ A collection of commonly useful SCSS functions, mixins, variables, and classes.
 
 
 
-## Downloads
-
-**TODO**
+#### [Download](https://github.com/bsara/scss-commons/releases)
 
 
 
