@@ -32,5 +32,5 @@ A collection of commonly useful SCSS functions, mixins, variables, classes, and 
 
 ## Documentation
 
-* **[API Reference](http://bsara.github.io/scss-commons)**
+* **[API Reference](http://bsara.github.io/scss-commons/0.2.0)**
 * **[Changelog](https://github.com/bsara/scss-commons/blob/master/CHANGELOG.md)**
