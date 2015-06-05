@@ -1,4 +1,4 @@
-## [v0.1.2](https://github.com/bsara/scss-commons/tree/v0.1.2) (2015-06-05)
+## [v0.2.0](https://github.com/bsara/scss-commons/tree/v0.2.0) (2015-06-05)
 
 * Fixed potential issues with `.gitattributes`
 * **New Mixins:**

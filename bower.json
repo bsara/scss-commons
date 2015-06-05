@@ -1,6 +1,6 @@
 {
   "name": "scss-commons",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "authors": [
     "Brandon Sara (http://bsara.github.io)"
   ],
@@ -12,7 +12,10 @@
     "style",
     "styles"
   ],
-  "license": "CPOL-1.02",
+  "license": {
+    "type": "CPOL-1.02",
+    "url": "https://github.com/bsara/scss-commons/blob/master/LICENSE.md"
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/bsara/scss-commons.git"
