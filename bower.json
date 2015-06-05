@@ -4,7 +4,7 @@
   "authors": [
     "Brandon Sara (http://bsara.github.io)"
   ],
-  "description": "A collection of commonly useful SCSS functions, mixins, variables, and classes",
+  "description": "A collection of commonly useful SCSS functions, mixins, variables, classes, and placeholders",
   "keywords": [
     "css",
     "sass",
@@ -13,8 +13,10 @@
     "styles"
   ],
   "license": [
-    "Copyright (c) 2015 Brandon Sara",
-    "CPOL-1.02"
+    {
+      "type": "CPOL-1.02",
+      "url": "https://github.com/bsara/scss-commons/blob/master/LICENSE.md"
+    }
   ],
   "repository": {
     "type": "git",
