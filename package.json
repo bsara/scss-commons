@@ -12,12 +12,7 @@
     "style",
     "styles"
   ],
-  "license": [
-    {
-      "type": "CPOL-1.02",
-      "url": "https://github.com/bsara/scss-commons/blob/master/LICENSE.md"
-    }
-  ],
+  "license": "CPOL-1.02",
   "repository": {
     "type": "git",
     "url": "git://github.com/bsara/scss-commons.git"
