@@ -92,25 +92,25 @@ linters:
       - max-height
       -
       - top
-      - bottom
       - left
       - right
+      - bottom
       -
       - margin
       - margin-top
-      - margin-bottom
       - margin-left
       - margin-right
+      - margin-bottom
       - margin-collapse
       - margin-top-collapse
-      - margin-bottom-collapse
       - margin-left-collapse
       - margin-right-collapse
+      - margin-bottom-collapse
       - padding
       - padding-top
-      - padding-bottom
       - padding-left
       - padding-right
+      - padding-bottom
       -
       - cursor
       - pointer-events
@@ -145,10 +145,6 @@ linters:
       - border-top-color
       - border-top-style
       - border-top-width
-      - border-bottom
-      - border-bottom-color
-      - border-bottom-style
-      - border-bottom-width
       - border-left
       - border-left-color
       - border-left-style
@@ -157,6 +153,10 @@ linters:
       - border-right-color
       - border-right-style
       - border-right-width
+      - border-bottom
+      - border-bottom-color
+      - border-bottom-style
+      - border-bottom-width
       - border-collapse
       - border-spacing
       - border-radius

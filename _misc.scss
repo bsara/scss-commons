@@ -149,6 +149,18 @@
 }
 
 
+/// Sets the cursor to a pointer with cross browser compatibility.
+///
+/// @example
+///   // Usage:
+///   @include cursor-pointer();
+@mixin cursor-pointer() {
+  // scss-lint:disable DuplicateProperty
+  cursor: pointer;
+  cursor: hand;
+}
+
+
 /// Generates the property `filter` as well as each necessary
 /// vendor prefix.
 ///
