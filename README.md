@@ -27,7 +27,8 @@ A collection of commonly useful SCSS functions, mixins, variables, classes, and 
 
 #### Download
 
-* Latest (v0.2.0) [[zip](https://github.com/bsara/scss-commons/archive/v0.2.0.zip)] [[tar.gz](https://github.com/bsara/scss-commons/archive/v0.2.0.tar.gz)]
+* Latest (v0.2.1) [[zip](https://github.com/bsara/scss-commons/archive/v0.2.1.zip)] [[tar.gz](https://github.com/bsara/scss-commons/archive/v0.2.1.tar.gz)]
+* v0.2.0 [[zip](https://github.com/bsara/scss-commons/archive/v0.2.0.zip)] [[tar.gz](https://github.com/bsara/scss-commons/archive/v0.2.0.tar.gz)]
 * v0.1.0 [[zip](https://github.com/bsara/scss-commons/archive/v0.1.1.zip)] [[tar.gz](https://github.com/bsara/scss-commons/archive/v0.1.0.tar.gz)]
 * [More...](https://github.com/bsara/scss-commons/releases)
 
@@ -35,5 +36,5 @@ A collection of commonly useful SCSS functions, mixins, variables, classes, and 
 
 ## Documentation
 
-* **[API Reference](http://bsara.github.io/scss-commons/0.2.0)**
+* **[API Reference](http://bsara.github.io/scss-commons/0.2.1)**
 * **[Changelog](https://github.com/bsara/scss-commons/blob/master/CHANGELOG.md)**
