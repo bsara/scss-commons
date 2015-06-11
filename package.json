@@ -26,7 +26,7 @@
     "/docs/**/*"
   ],
   "devDependencies": {
-    "gulp": "^3.8.11",
+    "gulp": "^3.9.0",
     "gulp-clean": "^0.3.1",
     "gulp-ruby-sass": "^1.0.5",
     "gulp-scss-lint": "^0.1.12",
