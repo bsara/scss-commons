@@ -190,12 +190,18 @@
 ///
 ///   // Output:
 ///   -webkit-font-smoothing: antialiased;
-///   -moz-font-smoothing: antialiased;
-///   font-smoothing: antialiased;
+///   -moz-osx-font-smoothing: grayscale;
 @mixin font-smoothing($val) {
-  @each $browser-prefix in webkit, moz, $string-empty {
-    #{process-browser-prefix($browser-prefix)}font-smoothing: $val;
+  $moz-val: $val;
+
+  @if ($val == antialiased) {
+    $moz-val: grayscale;
+  } @else if ($val != none) {
+    $moz-val: auto;
   }
+
+  -webkit-font-smoothing: $val;
+  -moz-osx-font-smoothing: $moz-val;
 }
 
 
