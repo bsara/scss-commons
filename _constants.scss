@@ -10,11 +10,11 @@
 
 
 /// The number of pts per pixel.
-/// @type pt
+/// @type Point
 $pt-per-px: 0.75pt;
 
 /// The number of pixels per pt.
-/// @type px
+/// @type Pixel
 $px-per-pt: 1px + (1px/3);
 
 

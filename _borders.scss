@@ -13,126 +13,145 @@
 /// Generates the property `border-radius` as well as each necessary
 /// vendor prefix.
 ///
-/// @param {Number} $radius - The border radius.
-///
-/// @example
-///   // Usage:
-///   @include border-radius(5px);
-///
-///   // Output:
-///   -webkit-border-radius: 5px;
-///   -moz-border-radius: 5px;
-///   border-radius: 5px;
+/// @param $radius - The border radius.
 @mixin border-radius($radius) {
-  @each $browser-prefix in webkit, moz, $string-empty {
-    #{process-browser-prefix($browser-prefix)}border-radius: $radius;
-  }
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
 }
 
 
-/// @todo Add Documentation
+/// Generates the property `border-radius` as well as each necessary
+/// vendor prefix for only the bottom corners of an element.
 ///
-/// @param {Number} $radius - The border radius.
+/// @param $radius - The border radius.
 ///
-/// @example
-///   TODO
+/// @requires {mixin} border-bottom-left-radius
+/// @requires {mixin} border-bottom-right-radius
+@mixin border-bottom-radius($radius) {
+  @include border-bottom-left-radius($radius);
+  @include border-bottom-right-radius($radius);
+}
+/// @see border-bottom-radius
+/// @requires border-bottom-radius
 @mixin border-radius-bottom($radius) {
-  @include border-radius-bottom-left($radius);
-  @include border-radius-bottom-right($radius);
+  @include border-bottom-radius($radius);
 }
 
 
-/// @todo Add Documentation
+/// Generates the property `border-radius` as well as each necessary
+/// vendor prefix for only the bottom-left corner of an element.
 ///
-/// @param {Number} $radius - The border radius.
-///
-/// @example
-///   TODO
-@mixin border-radius-bottom-left($radius) {
+/// @param $radius - The border radius.
+@mixin border-bottom-left-radius($radius) {
+  -webkit-border-bottom-left-radius: $radius;
   -moz-border-radius-bottomleft: $radius;
-
-  @each $browser-prefix in webkit, $string-empty {
-    #{process-browser-prefix($browser-prefix)}border-bottom-left-radius: $radius;
-  }
+  border-bottom-left-radius: $radius;
+}
+/// @see border-bottom-left-radius
+/// @requires border-bottom-left-radius
+@mixin border-radius-bottom-left($radius) {
+  @include border-bottom-left-radius($radius);
 }
 
 
-/// @todo Add Documentation
+/// Generates the property `border-radius` as well as each necessary
+/// vendor prefix for only the bottom-right corner of an element.
 ///
-/// @param {Number} $radius - The border radius.
-///
-/// @example
-///   TODO
-@mixin border-radius-bottom-right($radius) {
+/// @param $radius - The border radius.
+@mixin border-bottom-right-radius($radius) {
+  -webkit-border-bottom-right-radius: $radius;
   -moz-border-radius-bottomright: $radius;
-
-  @each $browser-prefix in webkit, $string-empty {
-    #{process-browser-prefix($browser-prefix)}border-bottom-right-radius: $radius;
-  }
+  border-bottom-right-radius: $radius;
+}
+/// @see border-bottom-right-radius
+/// @requires border-bottom-right-radius
+@mixin border-radius-bottom-right($radius) {
+  @include border-bottom-right-radius($radius);
 }
 
 
-/// @todo Add Documentation
+/// Generates the property `border-radius` as well as each necessary
+/// vendor prefix for only the left side corners of an element.
 ///
-/// @param {Number} $radius - The border radius.
+/// @param $radius - The border radius.
 ///
-/// @example
-///   TODO
+/// @requires {mixin} border-top-left-radius
+/// @requires {mixin} border-bottom-left-radius
+@mixin border-left-radius($radius) {
+  @include border-top-left-radius($radius);
+  @include border-bottom-left-radius($radius);
+}
+/// @see border-left-radius
+/// @requires border-left-radius
 @mixin border-radius-left($radius) {
-  @include border-radius-top-left($radius);
-  @include border-radius-bottom-left($radius);
+  @include border-left-radius($radius);
 }
 
 
-/// @todo Add Documentation
+/// Generates the property `border-radius` as well as each necessary
+/// vendor prefix for only the right side corners of an element.
 ///
-/// @param {Number} $radius - The border radius.
+/// @param $radius - The border radius.
 ///
-/// @example
-///   TODO
+/// @requires {mixin} border-top-right-radius
+/// @requires {mixin} border-bottom-right-radius
+@mixin border-right-radius($radius) {
+  @include border-top-right-radius($radius);
+  @include border-bottom-right-radius($radius);
+}
+/// @see border-right-radius
+/// @requires border-right-radius
 @mixin border-radius-right($radius) {
-  @include border-radius-top-right($radius);
-  @include border-radius-bottom-right($radius);
+  @include border-right-radius($radius);
 }
 
 
-/// @todo Add Documentation
+/// Generates the property `border-radius` as well as each necessary
+/// vendor prefix for only the top corners of an element.
 ///
-/// @param {Number} $radius - The border radius.
+/// @param $radius - The border radius.
 ///
-/// @example
-///   TODO
+/// @requires {mixin} border-top-left-radius
+/// @requires {mixin} border-top-right-radius
+@mixin border-top-radius($radius) {
+  @include border-top-left-radius($radius);
+  @include border-top-right-radius($radius);
+}
+/// @see border-top-radius
+/// @requires border-top-radius
 @mixin border-radius-top($radius) {
-  @include border-radius-top-left($radius);
-  @include border-radius-top-right($radius);
+  @include border-top-radius($radius);
 }
 
 
-/// @todo Add Documentation
+/// Generates the property `border-radius` as well as each necessary
+/// vendor prefix for only the top-left corner of an element.
 ///
-/// @param {Number} $radius - The border radius.
-///
-/// @example
-///   TODO
-@mixin border-radius-top-left($radius) {
+/// @param $radius - The border radius.
+@mixin border-top-left-radius($radius) {
+  -webkit-border-top-left-radius: $radius;
   -moz-border-radius-topleft: $radius;
-
-  @each $browser-prefix in webkit, $string-empty {
-    #{process-browser-prefix($browser-prefix)}border-top-left-radius: $radius;
-  }
+  border-top-left-radius: $radius;
+}
+/// @see {mixin} border-top-left-radius
+/// @requires {mixin} border-top-left-radius
+@mixin border-radius-top-left($radius) {
+  @include border-top-left-radius($radius);
 }
 
 
-/// @todo Add Documentation
+/// Generates the property `border-radius` as well as each necessary
+/// vendor prefix for only the top-right corner of an element.
 ///
-/// @param {Number} $radius - The border radius.
-///
-/// @example
-///   TODO
-@mixin border-radius-top-right($radius) {
+/// @param $radius - The border radius.
+@mixin border-top-right-radius($radius) {
+  -webkit-border-top-right-radius: $radius;
   -moz-border-radius-topright: $radius;
-
-  @each $browser-prefix in webkit, $string-empty {
-    #{process-browser-prefix($browser-prefix)}border-top-right-radius: $radius;
-  }
+  border-top-right-radius: $radius;
+}
+/// @see {mixin} border-top-right-radius
+/// @requires {mixin} border-top-right-radius
+@mixin border-radius-top-right($radius) {
+  @include border-top-right-radius($radius);
 }

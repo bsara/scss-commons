@@ -12,13 +12,12 @@
 
 /// Sets `margin-bottom` and `margin-left` to the same value.
 ///
-/// @param {%|em|in|pt|px} $val - Margin amount.
+/// @param $val - Margin amount.
 ///
 /// @example
-///   // Usage:
 ///   @include margin-bottom-left(5px);
 ///
-///   // Output:
+/// @outputs
 ///   margin-left: 5px;
 ///   margin-bottom: 5px;
 @mixin margin-bottom-left($val) {
@@ -31,13 +30,12 @@
 
 /// Sets `margin-bottom` and `margin-right` to the same value.
 ///
-/// @param {%|em|in|pt|px} $val - Margin amount.
+/// @param $val - Margin amount.
 ///
 /// @example
-///   // Usage:
 ///   @include margin-bottom-right(5px);
 ///
-///   // Output:
+/// @outputs
 ///   margin-right: 5px;
 ///   margin-bottom: 5px;
 @mixin margin-bottom-right($val) {
@@ -50,13 +48,14 @@
 
 /// Sets `margin-bottom`, `margin-left`, and `margin-right` to the same value.
 ///
-/// @param {%|em|in|pt|px} $val - Margin amount.
+/// @param $val - Margin amount.
+///
+/// @requires {mixin} margin-sides
 ///
 /// @example
-///   // Usage:
 ///   @include margin-bottom-sides(5px);
 ///
-///   // Output:
+/// @outputs
 ///   margin-left: 5px;
 ///   margin-right: 5px;
 ///   margin-bottom: 5px;
@@ -68,13 +67,12 @@
 
 /// Sets `margin-left` and `margin-right` to the same value.
 ///
-/// @param {%|em|in|pt|px} $val - Margin amount.
+/// @param $val - Margin amount.
 ///
 /// @example
-///   // Usage:
 ///   @include margin-sides(5px);
 ///
-///   // Output:
+/// @outputs
 ///   margin-left: 5px;
 ///   margin-right: 5px;
 @mixin margin-sides($val) {
@@ -87,13 +85,12 @@
 
 /// Sets `margin-top` and `margin-bottom` to the same value.
 ///
-/// @param {%|em|in|pt|px} $val - Margin amount.
+/// @param $val - Margin amount.
 ///
 /// @example
-///   // Usage:
 ///   @include margin-top-bottom(5px);
 ///
-///   // Output:
+/// @outputs
 ///   margin-top: 5px;
 ///   margin-bottom: 5px;
 @mixin margin-top-bottom($val) {
@@ -106,13 +103,12 @@
 
 /// Sets `margin-top` and `margin-left` to the same value.
 ///
-/// @param {%|em|in|pt|px} $val - Margin amount.
+/// @param $val - Margin amount.
 ///
 /// @example
-///   // Usage:
 ///   @include margin-top-left(5px);
 ///
-///   // Output:
+/// @outputs
 ///   margin-top: 5px;
 ///   margin-left: 5px;
 @mixin margin-top-left($val) {
@@ -125,13 +121,12 @@
 
 /// Sets `margin-top` and `margin-right` to the same value.
 ///
-/// @param {%|em|in|pt|px} $val - Margin amount.
+/// @param $val - Margin amount.
 ///
 /// @example
-///   // Usage:
 ///   @include margin-top-right(5px);
 ///
-///   // Output:
+/// @outputs
 ///   margin-top: 5px;
 ///   margin-right: 5px;
 @mixin margin-top-right($val) {
@@ -144,13 +139,14 @@
 
 /// Sets `margin-top`, `margin-left`, and `margin-right` to the same value.
 ///
-/// @param {%|em|in|pt|px} $val - Margin amount.
+/// @param $val - Margin amount.
+///
+/// @requires {mixin} margin-sides
 ///
 /// @example
-///   // Usage:
 ///   @include margin-top-sides(5px);
 ///
-///   // Output:
+/// @outputs
 ///   margin-top: 5px;
 ///   margin-left: 5px;
 ///   margin-right: 5px;

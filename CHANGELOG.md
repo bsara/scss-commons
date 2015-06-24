@@ -1,10 +1,22 @@
 ## [Latest](https://github.com/bsara/scss-commons)
 
+* Added aliases for border mixins
 * Added `Gemfile` to allow for easier setup when building the project
 * Added blank contribution guidelines file to be filled out at a later date
 * Fixed more potential issues with `.gitattributes`
+* Cleaned up and updated a lot of docs
+* Cleaned up code to be specific about vendor prefixes rather than using `@each` loops
 * Cleaned up project README
 * **New Mixins:**
+    * `animation($vals...)`
+    * `animation-delay($val)`
+    * `animation-direction($val)`
+    * `animation-duration($val)`
+    * `animation-fill-mode($val)`
+    * `animation-iteration-count($val)`
+    * `animation-name($val)`
+    * `animation-play-state($val)`
+    * `animation-timing-function($val)`
     * `font-icon-defaults()`
     * `keyframes($name) { @content }`
     * `remove-from-print()`

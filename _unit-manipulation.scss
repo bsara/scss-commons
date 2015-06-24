@@ -12,9 +12,9 @@
 
 /// @todo Add Documentation
 ///
-/// @param {Unit} $return-unit - TODO
-/// @param {em|pt|px} $vals - TODO
-/// @returns {em|pt|px} TODO
+/// @param {String} $return-unit - TODO
+/// @param {EM|Point|Pixel} $vals - TODO
+/// @returns {EM|Point|Pixel} TODO
 ///
 /// @example
 ///   TODO
@@ -75,12 +75,9 @@
 
 /// @todo Add Documentation
 ///
-/// @param {em} $em - TODO
-/// @param {pt} $base [12pt] - TODO
-/// @returns {pt} TODO
-///
-/// @example
-///   TODO
+/// @param {EM} $em - TODO
+/// @param {Point} $base [12pt] - TODO
+/// @returns {Point} TODO
 @function em-to-pt($em, $base: 12pt) {
   @if not(unitless($em)) and unit($em) != 'em' {
     @error "$em must either be unitless or be of the unit 'em', but was '#{unit($em)}'.";
@@ -104,12 +101,9 @@
 
 /// @todo Add Documentation
 ///
-/// @param {em} $em - TODO
-/// @param {px} $base [16px] - TODO
-/// @returns {px} TODO
-///
-/// @example
-///   TODO
+/// @param {EM} $em - TODO
+/// @param {Pixel} $base [16px] - TODO
+/// @returns {Pixel} TODO
 @function em-to-px($em, $base: 16px) {
   @if not(unitless($em)) and unit($em) != 'em' {
     @error "$em must either be unitless or be of the unit 'em', but was '#{unit($em)}'.";
@@ -133,11 +127,8 @@
 
 /// @todo Add Documentation
 ///
-/// @param {pt} $pt - TODO
-/// @returns {px} TODO
-///
-/// @example
-///   TODO
+/// @param {Point} $pt - TODO
+/// @returns {Pixel} TODO
 @function pt-to-px($pt) {
   @if not(unitless($pt)) and unit($pt) != 'pt' {
     @error "$pt must either be unitless or be of the unit 'pt', but was '#{unit($pt)}'.";
@@ -153,11 +144,8 @@
 
 /// @todo Add Documentation
 ///
-/// @param {px} $px - TODO
-/// @returns {pt} TODO
-///
-/// @example
-///   TODO
+/// @param {Pixel} $px - TODO
+/// @returns {Point} TODO
 @function px-to-pt($px) {
   @if not(unitless($px)) and unit($px) != 'px' {
     @error "$px must either be unitless or be of the unit 'px', but was '#{unit($px)}'.";
@@ -175,10 +163,7 @@
 ///
 /// @param {pt|px} $val - TODO
 /// @param {pt|px} $base [16px] - TODO
-/// @returns {em} TODO
-///
-/// @example
-///   TODO
+/// @returns {EM} TODO
 @function to-em($val, $base: 16px) {
   $val-unit: unit($val);
   $base-unit: unit($base);
@@ -205,17 +190,16 @@
 
 /// Removes any units used appended to the given number.
 ///
-/// @param {%|em|in|pt|px} $num - Number from which units will be removed.
+/// @param {Number} $num - Number from which units will be removed.
 /// @returns {Number} The same number given, but without the units.
 ///
 /// @throws Throws an error if unit is given that is not supported.
 ///         (See parameters for supported unit types).
 ///
 /// @example
-///   // Usage:
 ///   z-index: remove-unit(10px);
 ///
-///   // Output:
+/// @outputs
 ///   z-index: 10;
 @function remove-unit($num) {
   @if unitless($num) {
