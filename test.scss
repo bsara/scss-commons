@@ -177,36 +177,6 @@
 }
 
 
-#pseudoIconTest {
-  @include pseudo-icon {
-    color: #424242;
-  }
-
-  @include pseudo-icon-active {
-    color: #111;
-  }
-
-  @include pseudo-icon-hover {
-    color: #222;
-  }
-}
-
-
-#pseudoIconAfterTest {
-  @include pseudo-icon-after {
-    color: #424242;
-  }
-
-  @include pseudo-icon-after-active {
-    color: #111;
-  }
-
-  @include pseudo-icon-after-hover {
-    color: #222;
-  }
-}
-
-
 #repeatingLinearGradientTest0 {
   /*
    * Expected:

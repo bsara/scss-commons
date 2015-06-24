@@ -179,6 +179,28 @@
 }
 
 
+/// Adds sensible default property values for an element displaying a
+/// font icon.
+///
+/// For a good example of font icons, refer to http://fontawesome.io.
+///
+/// (**Note:** The `font-family` property is NOT set by this mixin).
+@mixin font-icon-defaults() {
+  // scss-lint:disable DeclarationOrder
+  font: {
+    size: inherit;
+    style: normal;
+    variant: normal;
+    weight: normal;
+  }
+  line-height: 1;
+  text-rendering: auto;
+  @include font-smoothing(antialiased);
+  transform: translate(0, 0);
+  speak: none;
+}
+
+
 /// Generates the property `font-smoothing` as well as each necessary
 /// vendor prefix.
 ///
@@ -280,6 +302,15 @@
 @mixin position-top-bottom($val) {
   top: $val;
   bottom: $val;
+}
+
+
+/// Causes element(s) to be completely absent from print media.
+/// @see %remove-from-print
+@mixin remove-from-print() {
+  @media print {
+    display: none !important;
+  }
 }
 
 

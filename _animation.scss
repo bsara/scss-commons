@@ -1,0 +1,65 @@
+////
+/// @group Animation
+/// @author Brandon Sara (http://bsara.github.io)
+////
+
+
+
+//----------------------------------------------------------------------------------//
+// Mixins                                                                           //
+//----------------------------------------------------------------------------------//
+
+
+
+/// Generates a `@keyframes` rule as well as each necessary
+/// vendor prefix.
+///
+/// @param {String} $name - The name of the keyframe.
+/// @content The selectors and properties to be inserted in the `@keyframes` rule.
+///
+/// @example
+///   // Usage:
+///   @include keyframes('my-keyframe-name') {
+///     100% {
+///       transform: rotate(360deg);
+///     }
+///   }
+///
+///   // Output:
+///   @-webkit-keyframes keyframe-name {
+///     100% {
+///       transform: rotate(360deg);
+///     }
+///   }
+///   @-moz-keyframes keyframe-name {
+///     100% {
+///       transform: rotate(360deg);
+///     }
+///   }
+///   @-o-keyframes keyframe-name {
+///     100% {
+///       transform: rotate(360deg);
+///     }
+///   }
+///   @keyframes keyframe-name {
+///     100% {
+///       transform: rotate(360deg);
+///     }
+///   }
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+
+  @-o-keyframes #{$name} {
+    @content;
+  }
+
+  @keyframes #{$name} {
+    @content;
+  }
+}

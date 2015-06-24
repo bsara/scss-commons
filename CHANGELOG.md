@@ -1,5 +1,21 @@
 ## [Latest](https://github.com/bsara/scss-commons)
 
+* Added `Gemfile` to allow for easier setup when building the project
+* Added blank contribution guidelines file to be filled out at a later date
+* Fixed more potential issues with `.gitattributes`
+* Cleaned up project README
+* **New Mixins:**
+    * `font-icon-defaults()`
+    * `keyframes($name) { @content }`
+    * `remove-from-print()`
+* **Removed Mixins:**
+    * `pseudo-icon`
+    * `pseudo-icon-after`
+    * `pseudo-icon-after-active`
+    * `pseudo-icon-after-hover`
+    * `pseudo-icon-active`
+    * `pseudo-icon-hover`
+
 
 ## [v0.2.1](https://github.com/bsara/scss-commons/tree/v0.2.1) (2015-06-11)
 
@@ -9,7 +25,9 @@
 
 ## [v0.2.0](https://github.com/bsara/scss-commons/tree/v0.2.0) (2015-06-05)
 
-* Fixed potential issues with `.gitattributes`
+* Fixed potential issues with `.gitattributes`.
+
+
 * **New Mixins:**
     * `cursor-pointer()`
 
