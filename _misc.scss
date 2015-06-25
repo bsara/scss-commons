@@ -14,9 +14,10 @@
 /// @returns {String} `$value` prepended with a `\` character.
 ///
 /// @example
+///   // Usage:
 ///   content: prepend-slash(2716);
 ///
-/// @outputs
+///   // Output:
 ///   content: "\2716";
 @function prepend-slash($value) {
   @return unquote("\"\\#{$value}\"");
@@ -31,10 +32,11 @@
 ///                   is an empty string, then an empty string is returned.
 ///
 /// @example
+///   // Usage:
 ///   #{process-browser-prefix('webkit')}user-select: none;
 ///   #{process-browser-prefix('')}user-select: none;
 ///
-/// @outputs
+///   // Output:
 ///   -webkit-user-select: none;
 ///   user-select: none;
 @function process-browser-prefix($browser-prefix) {
@@ -51,9 +53,10 @@
 /// @returns {Percent} `$num` witha `%` appended to it.
 ///
 /// @example
+///   // Usage:
 ///   width: add-percent-sign(42);
 ///
-/// @outputs
+///   // Output:
 ///   width: 42%;
 @function add-percent-sign($num) {
   @return $num * 1%;
@@ -69,10 +72,11 @@
 /// @requires {function} add-percent-sign
 ///
 /// @example
+///   // Usage:
 ///   width: percentage-of-pieces(5);
 ///   height: percentage-of-pieces(3);
 ///
-/// @outputs
+///   // Output:
 ///   width: 20%;
 ///   height: 33.33333%;
 @function percentage-of-pieces($num-of-pieces) {
@@ -132,13 +136,6 @@
 /// vendor prefix.
 ///
 /// @param $val - The value of the filter property.
-///
-/// @example
-///   @include filter(blur(8px));
-///
-/// @outputs
-///   -webkit-filter: blur(8px);
-///   filter: blur(8px);
 @mixin filter($val) {
   -webkit-filter: $val;
   filter: $val;
@@ -173,13 +170,6 @@
 /// vendor prefix.
 ///
 /// @param $val - The value of the font-smoothing property.
-///
-/// @example
-///   @include font-smoothing(antialiased);
-///
-/// @outputs
-///   -webkit-font-smoothing: antialiased;
-///   -moz-osx-font-smoothing: grayscale;
 @mixin font-smoothing($val) {
   $moz-val: $val;
 
@@ -201,9 +191,10 @@
 /// @param $vals... - The value(s) to pass to the `linear-gradient` function.
 ///
 /// @example
+///   // Usage:
 ///   @include linear-gradient(background, left, #ff0 0%, #f00 50%, #000 51%, #222 71%, #fff 100%)
 ///
-/// @outputs
+///   // Output:
 ///   background: -webkit-linear-gradient(left, #ff0 0%, #f00 50%, #000 51%, #222 71%, #fff 100%);
 ///   background: -moz-linear-gradient(left, #ff0 0%, #f00 50%, #000 51%, #222 71%, #fff 100%);
 ///   background: -ms-linear-gradient(left, #ff0 0%, #f00 50%, #000 51%, #222 71%, #fff 100%);
@@ -233,13 +224,6 @@
 /// Sets `left` and `right` to the same value.
 ///
 /// @param $val - Position value.
-///
-/// @example
-///   @include position-sides(5px);
-///
-/// @outputs
-///   left: 5px;
-///   right: 5px;
 @mixin position-sides($val) {
   left: $val;
   right: $val;
@@ -249,13 +233,6 @@
 /// Sets `top` and `bottom` to the same value.
 ///
 /// @param $val - Position value.
-///
-/// @example
-///   @include position-sides(5px);
-///
-/// @outputs
-///   top: 5px;
-///   bottom: 5px;
 @mixin position-top-bottom($val) {
   top: $val;
   bottom: $val;
@@ -278,9 +255,10 @@
 /// @param $vals... - The value(s) to pass to the `repeating-linear-gradient` function.
 ///
 /// @example
+///   // Usage:
 ///   @include repeating-linear-gradient(color, left, #ff0 0%, #f00 50%, #000 51%, #222 71%, #fff 100%)
 ///
-/// @outputs
+///   // Output:
 ///   color: -webkit-repeating-linear-gradient(left, #ff0 0%, #f00 50%, #000 51%, #222 71%, #fff 100%);
 ///   color: -moz-repeating-linear-gradient(left, #ff0 0%, #f00 50%, #000 51%, #222 71%, #fff 100%);
 ///   color: -ms-repeating-linear-gradient(left, #ff0 0%, #f00 50%, #000 51%, #222 71%, #fff 100%);
@@ -298,13 +276,6 @@
 /// Sets `width` and `height` to the same value.
 ///
 /// @param $val - Size value.
-///
-/// @example
-///   @include size(700px);
-///
-/// @outputs
-///   width: 700px;
-///   height: 700px;
 @mixin size($val) {
   width: $val;
   height: $val;

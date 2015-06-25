@@ -197,9 +197,10 @@
 ///         (See parameters for supported unit types).
 ///
 /// @example
+///   // Usage:
 ///   z-index: remove-unit(10px);
 ///
-/// @outputs
+///   // Output:
 ///   z-index: 10;
 @function remove-unit($num) {
   @if unitless($num) {

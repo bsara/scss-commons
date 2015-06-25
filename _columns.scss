@@ -125,11 +125,12 @@
 /// @requires {function} percentage-of-pieces
 ///
 /// @example
+///   // Usage:
 ///   .my-selector {
 ///     @include multi-column-width(5);
 ///   }
 ///
-/// @outputs
+///   // Output:
 ///   .my-selector:only-child {
 ///     width: 100%;
 ///   }

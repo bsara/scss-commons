@@ -1,4 +1,4 @@
-## [Latest](https://github.com/bsara/scss-commons)
+## [v0.3.0](https://github.com/bsara/scss-commons/tree/v0.3.0) (2015-06-25)
 
 * Added aliases for border mixins
 * Added `Gemfile` to allow for easier setup when building the project
