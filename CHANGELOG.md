@@ -1,3 +1,9 @@
+## [Master](https://github.com/bsara/scss-commons)
+
+* **Updated Mixins:**
+    * `transform($val)` - Added missing vendor prefixes
+
+
 ## [v0.3.0](https://github.com/bsara/scss-commons/tree/v0.3.0) (2015-06-25)
 
 * Added aliases for border mixins
