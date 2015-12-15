@@ -1,11 +1,11 @@
-## [v0.3.1](https://github.com/bsara/scss-commons/tree/v0.3.1) (2015-12-14)
+## [v0.3.1](https://github.com/bsara/scss-commons/releases/tag/v0.3.1) (2015-12-14)
 
 * Updated code to remove deprecation warnings in SASS 3.4.20.
 * **Updated Mixins:**
     * `transform($val)` - Added missing vendor prefixes
 
 
-## [v0.3.0](https://github.com/bsara/scss-commons/tree/v0.3.0) (2015-06-25)
+## [v0.3.0](https://github.com/bsara/scss-commons/releases/tag/v0.3.0) (2015-06-25)
 
 * Added aliases for border mixins
 * Added `Gemfile` to allow for easier setup when building the project
@@ -36,13 +36,13 @@
     * `pseudo-icon-hover`
 
 
-## [v0.2.1](https://github.com/bsara/scss-commons/tree/v0.2.1) (2015-06-11)
+## [v0.2.1](https://github.com/bsara/scss-commons/releases/tag/v0.2.1) (2015-06-11)
 
 * **Updated Mixins:**
     * `font-smoothing($val)` - Fixed output
 
 
-## [v0.2.0](https://github.com/bsara/scss-commons/tree/v0.2.0) (2015-06-05)
+## [v0.2.0](https://github.com/bsara/scss-commons/releases/tag/v0.2.0) (2015-06-05)
 
 * Fixed potential issues with `.gitattributes`.
 
@@ -51,6 +51,6 @@
     * `cursor-pointer()`
 
 
-## [v0.1.0](https://github.com/bsara/scss-commons/tree/v0.1.0) (2015-05-19)
+## [v0.1.0](https://github.com/bsara/scss-commons/releases/tag/v0.1.0) (2015-05-19)
 
 * Initial Release
