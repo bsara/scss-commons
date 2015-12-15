@@ -167,11 +167,11 @@
 #linearGradientTest0 {
   /*
    * Expected:
-   *   background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.5), rgb(255, 255, 255));
-   *   background: -moz-linear-gradient(left, rgba(0, 0, 0, 0.5), rgb(255, 255, 255));
-   *   background: -ms-linear-gradient(left, rgba(0, 0, 0, 0.5), rgb(255, 255, 255));
-   *   background: -o-linear-gradient(left, rgba(0, 0, 0, 0.5), rgb(255, 255, 255));
-   *   background: linear-gradient(left, rgba(0, 0, 0, 0.5), rgb(255, 255, 255));
+   *   background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.5), white);
+   *   background: -moz-linear-gradient(left, rgba(0, 0, 0, 0.5), white);
+   *   background: -ms-linear-gradient(left, rgba(0, 0, 0, 0.5), white);
+   *   background: -o-linear-gradient(left, rgba(0, 0, 0, 0.5), white;
+   *   background: linear-gradient(left, rgba(0, 0, 0, 0.5), white);
    */
   @include linear-gradient(background, left, rgba(0, 0, 0, 0.5), rgb(255, 255, 255));
 }
@@ -180,11 +180,11 @@
 #repeatingLinearGradientTest0 {
   /*
    * Expected:
-   *   background: -webkit-repeating-linear-gradient(left, rgba(0, 0, 0, 0.5), rgb(255, 255, 255));
-   *   background: -moz-repeating-linear-gradient(left, rgba(0, 0, 0, 0.5), rgb(255, 255, 255));
-   *   background: -ms-repeating-linear-gradient(left, rgba(0, 0, 0, 0.5), rgb(255, 255, 255));
-   *   background: -o-repeating-linear-gradient(left, rgba(0, 0, 0, 0.5), rgb(255, 255, 255));
-   *   background: repeating-linear-gradient(left, rgba(0, 0, 0, 0.5), rgb(255, 255, 255));
+   *   background: -webkit-repeating-linear-gradient(left, rgba(0, 0, 0, 0.5), #2a2a2a);
+   *   background: -moz-repeating-linear-gradient(left, rgba(0, 0, 0, 0.5), #2a2a2a);
+   *   background: -ms-repeating-linear-gradient(left, rgba(0, 0, 0, 0.5), #2a2a2a);
+   *   background: -o-repeating-linear-gradient(left, rgba(0, 0, 0, 0.5), #2a2a2a);
+   *   background: repeating-linear-gradient(left, rgba(0, 0, 0, 0.5), #2a2a2a);
    */
-  @include repeating-linear-gradient(background, left, rgba(0, 0, 0, 0.5), rgb(255, 255, 255));
+  @include repeating-linear-gradient(background, left, rgba(0, 0, 0, 0.5), rgb(42, 42, 42));
 }

@@ -68,8 +68,15 @@
     $ret: $ret + remove-unit($val);
   }
 
+  @if $return-unit == 'em' {
+    $return-unit: 1em;
+  } @else if $return-unit == 'px' {
+    $return-unit: 1px;
+  } @else if $return-unit == 'pt' {
+    $return-unit: 1pt;
+  }
 
-  @return $ret * 1#{$return-unit};
+  @return ($ret * $return-unit);
 }
 
 

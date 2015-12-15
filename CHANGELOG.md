@@ -1,5 +1,6 @@
-## [Master](https://github.com/bsara/scss-commons)
+## [v0.3.1](https://github.com/bsara/scss-commons/tree/v0.3.1) (2015-12-14)
 
+* Updated code to remove deprecation warnings in SASS 3.4.20.
 * **Updated Mixins:**
     * `transform($val)` - Added missing vendor prefixes
 
