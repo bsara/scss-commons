@@ -1,6 +1,6 @@
 {
   "name": "scss-commons",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "authors": [
     "Brandon Sara (http://bsara.github.io)"
   ],
@@ -26,10 +26,10 @@
     "/docs/**/*"
   ],
   "devDependencies": {
-    "gulp": "^3.9.0",
-    "gulp-clean": "^0.3.1",
-    "gulp-ruby-sass": "^1.0.5",
-    "gulp-scss-lint": "^0.1.12",
-    "sassdoc": "^2.1.11"
+    "gulp": "latest",
+    "gulp-clean": "latest",
+    "gulp-ruby-sass": "latest",
+    "gulp-scss-lint": "latest",
+    "sassdoc": "latest"
   }
 }

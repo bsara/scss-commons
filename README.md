@@ -17,11 +17,7 @@ A collection of commonly useful SCSS functions, mixins, variables, classes, and 
 
 - **NPM:** `$ npm install --save-dev scss-commons`
 - **Bower:** `$ bower install --save-dev scss-commons`
-- **Download:**
-    - [v0.3.0](https://github.com/bsara/scss-commons/releases/tag/v0.3.0) *(Latest Stable)*
-    - [v0.2.1](https://github.com/bsara/scss-commons/releases/tag/v0.2.1)
-    - [v0.2.0](https://github.com/bsara/scss-commons/releases/tag/v0.2.0)
-    - [More...](https://github.com/bsara/scss-commons/releases)
+- [**Download**](https://github.com/bsara/scss-commons/releases)
 
 
 
