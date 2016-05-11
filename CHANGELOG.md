@@ -1,3 +1,8 @@
+## [v0.3.2](https://github.com/bsara/scss-commons/releases/tag/v0.3.2) (2016-05-11)
+
+* Minor README updates
+
+
 ## [v0.3.1](https://github.com/bsara/scss-commons/releases/tag/v0.3.1) (2015-12-14)
 
 * Updated code to remove deprecation warnings in SASS 3.4.20.
